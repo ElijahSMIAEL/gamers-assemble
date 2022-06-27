@@ -1,0 +1,13 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="add-game-form" action="/games" method="POST">
+    <input type="text" name="title" id="game-title-input" placeholder="Game Title...">
+    <textarea name="description" id="description-area" placeholder="Game Description..."></textarea>
+    <button type="submit" id="add-game-btn">Add Game</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
