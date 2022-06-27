@@ -9,6 +9,9 @@ router.get('/', lfgsCtrl.index)
 // GET -- localhost:3000/lfgs/new
 router.get('/new', lfgsCtrl.new)
 
+// POST -- localhost:3000/lfgs
+router.post('/', lfgsCtrl.create)
+
 export {
   router
 }

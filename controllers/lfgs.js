@@ -30,9 +30,21 @@ function newLfg(req, res) {
   })
 }
 
+function create(req, res) {
+  Lfg.create(req.body) 
+  .then(lfg => {
+    res.redirect('/')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 
 export {
   index,
   newLfg as new,
+  create,
 }

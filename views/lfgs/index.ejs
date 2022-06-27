@@ -3,12 +3,15 @@
 
 <main>
   <div id="lfg-post" class="card" style="width: 18rem;">
+    <% lfgs.forEach(lfg => { %>
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title"><%= lfg.name %></h5>
+      <h6 class="card-subtitle"><%= lfg.game.name %></h6>
+      <p class="card-text"><%= lfg.content %></p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+    <% }) %>
   </div>
 </main>
 
