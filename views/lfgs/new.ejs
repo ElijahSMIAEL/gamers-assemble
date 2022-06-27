@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-lfg-form" action="/lfgs" method="POST">
+    <label for="game-select">Game: </label>
+    <select name="game" id="game-select">
+      <% games.forEach(game => { %>
+        <option value="<%= game._id %>"><%= game.name %></option>
+      <% }) %>
+    </select>
+    <label id="playerNo-input" for="playerNum">Number of Players: </label>
+    <input type="number" name="playerNo" id="playerNum">
+    <textarea name="content" id="lfg-content" placeholder="Please enter description..."></textarea>
+    <button id="lfg-submit-btn" type="submit">Post LFG</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

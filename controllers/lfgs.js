@@ -1,4 +1,5 @@
 import { Lfg } from "../models/lfg.js"
+import { Game } from "../models/game.js"
 
 function index(req, res) {
   Lfg.find({})
@@ -15,8 +16,23 @@ function index(req, res) {
   })
 }
 
+function newLfg(req, res) {
+  Game.find({})
+  .then(games => {
+    res.render('lfgs/new', {
+      title: "Create LFG",
+      games,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 
 export {
   index,
+  newLfg as new,
 }
