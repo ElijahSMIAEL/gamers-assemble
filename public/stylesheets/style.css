@@ -31,6 +31,24 @@ nav {
   justify-content: center;
 }
 
+nav > a {
+  margin: 10px;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: #424748;
+}
+
+nav > a:visited {
+  color: #424748;
+}
+
+nav > a.active {
+  color: aqua;
+  font-size: 1.8rem;
+}
+
+
 main {
   display: flex;
   align-items: center;

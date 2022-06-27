@@ -1,4 +1,4 @@
-import { Profile } from "../models/profile"
+import { Profile } from "../models/profile.js"
 
 function index(req, res) {
   Profile.find({})
@@ -8,4 +8,8 @@ function index(req, res) {
       title: "Profile Page"
     })
   })
+}
+
+export {
+  index,
 }

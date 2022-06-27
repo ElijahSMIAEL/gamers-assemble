@@ -4,6 +4,18 @@
 </head>
 <body>
   <nav>
+    <a href="/lfgs" <%- title === 'All LFGs' ? 'class="active"' : '' %>   
+      >
+      All LFGs
+    </a>
+    <a href="/lfgs/new" <%- title === 'Create LFG' ? 'class="active"' : '' %> 
+    >
+      Create LFG
+    </a>
+    <a href="/games/new" <%- title === 'Add Game'  ? 'class="active"' : '' %>  
+      >
+      Add Game
+    </a>
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
@@ -15,12 +27,4 @@
         </button>
       </a>
     <% } %>
-    <a href="/lfgs" <%- title === 'All LFGs' %>   
-      >
-      All LFGs
-    </a>
-    <a href="/games/new" <%- title === 'Add Game' %>  
-      >
-      Add Game
-    </a>
   </nav>
