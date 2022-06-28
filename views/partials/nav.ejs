@@ -5,6 +5,12 @@
 <body>
   <nav>
     <% if (user) { %>
+      <a href="/profiles">
+        <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+        />
+      </a>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>

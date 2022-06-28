@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as lfgsCtrl from '../controllers/lfgs.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -16,7 +17,10 @@ router.get('/:id', lfgsCtrl.show)
 router.get('/:id/edit', lfgsCtrl.edit)
 
 // POST -- localhost:3000/lfgs
-router.post('/', lfgsCtrl.create)
+router.post('/', isLoggedIn, lfgsCtrl.create)
+
+// PUT -- localhost:3000/lfgs/:id
+router.put('/:id', isLoggedIn, lfgsCtrl.update)
 
 export {
   router

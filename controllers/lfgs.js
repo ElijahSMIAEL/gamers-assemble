@@ -75,6 +75,23 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Lfg.findById(req.params.id)
+  .then(lfg => {
+    if (lfg.owner.equals(req.user.profile._id)) {
+      lfg.updateOne(req.body, {new: true})
+      .then(updatedLfg => {
+        res.redirect(`/lfgs/${lfg._id}`)
+      })
+    } else {
+      throw new Error ('MUST BE OWNER')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/lfgs')
+  })
+}
 
 
 export {
@@ -83,4 +100,5 @@ export {
   create,
   show,
   edit,
+  update,
 }

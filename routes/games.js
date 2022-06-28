@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as gamesCtrl from '../controllers/games.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -7,7 +8,7 @@ const router = Router()
 router.get('/new', gamesCtrl.new)
 
 // POST -- localhost:3000/games
-router.post('/', gamesCtrl.create)
+router.post('/', isLoggedIn, gamesCtrl.create)
 
 export {
   router

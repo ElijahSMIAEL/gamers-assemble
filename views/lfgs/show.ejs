@@ -9,12 +9,16 @@
   <div id="playerNo-display"><%= lfg.playerNo %></div>
   <label for="lfg-description">Description: </label>
   <div id="lfg-description"><%= lfg.content %></div>
-  <% if (lfg.owner !== user?.profile._id) { %> 
-  <button id="join-button">Join</button>
-  <% } %> 
+  <% if (lfg.owner.equals(user?.profile._id)) { %> 
   <form action="/lfgs/<%= lfg._id %>/edit" method="GET">
     <button id="edit-button">Edit</button>
   </form>
+  <% } else { %>
+    <button id="join-button">Join</button>
+  <% } %>
+  <a href="/lfgs">
+    <button>Back</button>
+  </a>
 </main>
 
 <%- include('../partials/footer') %>

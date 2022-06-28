@@ -1,0 +1,25 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Welcome to the profile index. Hello, <%= user ? user.profile.name : "friend" %></h1>
+  <% if (user?.profile.avatar) { %>
+    <div>
+      <img
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
+      />
+    </div>
+  <% } %>
+  <% if (!user?.profile.gamerTag) { %> 
+  <form action="">
+    <label for="steam-input">Steam-Username: </label>
+    <input type="text" name="gamerTag" id="steam-input">
+  </form>
+  <% } else { %>
+    <label for="steam-display">Steam-Username: </label>
+    <h2 id="steam-display"><%= user.profile.gamerTag %></h2>
+  <% } %> 
+</main>
+
+<%- include('../partials/footer') %>
