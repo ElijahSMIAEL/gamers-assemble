@@ -61,6 +61,20 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Lfg.findById(req.params.id)
+  .then(lfg => {
+    res.render('lfgs/edit', {
+      lfg,
+      title: "Edit Post"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 
 export {
@@ -68,4 +82,5 @@ export {
   newLfg as new,
   create,
   show,
+  edit,
 }

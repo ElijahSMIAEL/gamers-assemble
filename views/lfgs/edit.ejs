@@ -1,0 +1,16 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="edit-lfg-form" action="/lfgs/<%= lfg._id %>?_method=PUT" method="POST">
+    <label for="lfg-title">Post Title: </label>
+    <input value="<%= lfg.name %> " type="text" name="name" id="lfg-title">
+    <label id="playerNo-input" for="playerNum">Number of Players: </label>
+    <input value="<%= lfg.playerNo %>" type="number" name="playerNo" id="playerNum">
+    <textarea name="content" id="lfg-content" placeholder="<%= lfg.content %>"></textarea>
+    <button id="lfg-submit-btn" type="submit">Update LFG</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
