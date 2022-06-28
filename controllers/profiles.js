@@ -10,6 +10,18 @@ function index(req, res) {
   })
 }
 
+function update(req, res) {
+  Profile.findByIdAndUpdate(req.params.id, req.body, {new: false})
+  .then(profile => {
+    res.redirect('/')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
+  update,
 }
