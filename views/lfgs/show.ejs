@@ -9,7 +9,9 @@
   <div id="playerNo-display"><%= lfg.playerNo %></div>
   <label for="lfg-description">Description: </label>
   <div id="lfg-description"><%= lfg.content %></div>
+  <% if (lfg.owner !== user?.profile._id) { %> 
   <button id="join-button">Join</button>
+  <% } %> 
 </main>
 
 <%- include('../partials/footer') %>

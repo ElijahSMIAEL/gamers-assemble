@@ -31,13 +31,14 @@ function newLfg(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   Lfg.create(req.body) 
   .then(lfg => {
-    res.redirect('/')
+    res.redirect('/lfgs')
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/lfgs/new')
   })
 }
 

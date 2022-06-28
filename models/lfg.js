@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const lfgSchema = new Schema({
   name: {type: String, required: true},
   content: String,
-  author: {type: Schema.Types.ObjectId, ref: "Profile"},
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   game: {type: Schema.Types.ObjectId, ref: "Game"},
   playerNo: {type: Number, required: true},
 }, {
