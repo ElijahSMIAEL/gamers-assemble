@@ -1,10 +1,10 @@
 import { Profile } from "../models/profile.js"
 
 function index(req, res) {
-  Profile.find({})
-  .then(profiles => {
+  Profile.findById(req.params.id)
+  .then(profile => {
     res.render('profiles/index', {
-      profiles,
+      profile,
       title: "Profile Page"
     })
   })
