@@ -5,12 +5,13 @@
   <div id="lfg-post" class="card" style="width: 18rem;">
     <% lfgs.forEach(lfg => { %>
     <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><%= lfg.name %></h5>
-      <h6 class="card-subtitle"><%= lfg.game.name %></h6>
-      <p class="card-text"><%= lfg.content %></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+    <a id="card-a" href="/lfgs/<%= lfg._id %>">
+      <div class="card-body">
+        <h5 id="card-title" class="card-text"><%= lfg.name %></h5>
+        <h6 id="card-subtitle" class="card-text"><%= lfg.game.name %></h6>
+        <p id="card-description" class="card-text"><%= lfg.content %></p>
+      </div>
+    </a>
     <% }) %>
   </div>
 </main>

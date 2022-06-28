@@ -41,10 +41,30 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Lfg.findById(req.params.id)
+  .populate('game')
+  .then(lfg => {
+    Game.find({_id: {$nin: lfg.game}})
+    .then(game => {
+      res.render('lfgs/show', {
+        title: `${lfg.name}`,
+        lfg,
+        game,
+      })
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 
 export {
   index,
   newLfg as new,
   create,
+  show,
 }
