@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <label for="game-display">Game: </label>
+  <div id="game-display"><%= lfg.game.name %></div>
+  <label for="playerNo-display">Players needed: </label>
+  <div id="playerNo-display"><%= lfg.playerNo %></div>
+  <label for="lfg-description">Description: </label>
+  <div id="lfg-description"><%= lfg.content %></div>
+  <button id="join-button">Join</button>
+</main>
+
+<%- include('../partials/footer') %>
