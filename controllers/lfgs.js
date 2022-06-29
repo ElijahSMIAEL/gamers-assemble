@@ -4,11 +4,17 @@ import { Profile } from "../models/profile.js"
 
 function index(req, res) {
   Lfg.find({})
+  .populate('game')
+  .populate('owner')
   .then(lfgs => {
-    res.render('lfgs/index', {
-      lfgs,
-      title: "All LFGs",
-      user: req.user ? req. user : null,
+    Game.find({_id: {$nin: lfgs.game}})
+    Profile.find({_id: {$nin: lfgs.owner}})
+    .then(() => {
+      res.render('lfgs/index', {
+        lfgs,
+        title: "All LFGs",
+        user: req.user ? req. user : null,
+      })
     })
   })
   .catch(err => {
