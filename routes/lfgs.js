@@ -19,6 +19,9 @@ router.get('/:id/edit', lfgsCtrl.edit)
 // POST -- localhost:3000/lfgs
 router.post('/', isLoggedIn, lfgsCtrl.create)
 
+// POST -- localhost:3000/lfgs/:id/reply
+router.post('/:id/replies', isLoggedIn, lfgsCtrl.join)
+
 // PUT -- localhost:3000/lfgs/:id
 router.put('/:id', isLoggedIn, lfgsCtrl.update)
 

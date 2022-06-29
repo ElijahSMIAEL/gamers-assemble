@@ -10,15 +10,25 @@
   <label for="lfg-description">Description: </label>
   <div id="lfg-description"><%= lfg.content %></div>
   <% if (lfg.owner.equals(user?.profile._id)) { %> 
+  <ul>
+    <% lfg.playerReplies.forEach(reply => { %>
+      <li><%= reply.owner %></li>
+    <% }) %>
+  </ul>
+  <% } %> 
+  <% if (lfg.owner.equals(user?.profile._id)) { %> 
   <form action="/lfgs/<%= lfg._id %>/edit" method="GET">
     <button id="edit-button">Edit</button>
   </form>
-  <% } else { %>
+  <% } else if (lfg.playerNo !== 0){ %>
+    <form action="/lfgs/<%= lfg._id %>/replies" method="POST">
     <button id="join-button">Join</button>
+    </form>
   <% } %>
   <a href="/lfgs">
     <button>Back</button>
   </a>
+
 </main>
 
 <%- include('../partials/footer') %>

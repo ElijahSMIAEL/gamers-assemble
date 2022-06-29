@@ -104,6 +104,22 @@ function deleteLfg(req, res) {
   })
 }
 
+function join(req, res) {
+  Lfg.findById(req.params.id)
+  .then(lfg => {
+    lfg.playerNo = lfg.playerNo - 1
+    lfg.playerReplies.push(req.user.profile.gamerTag)
+    lfg.save()
+    .then(() => {
+      res.redirect(`/lfgs/${lfg._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/lfgs')
+  })
+}
+
 
 export {
   index,
@@ -112,5 +128,6 @@ export {
   show,
   edit,
   update,
-  deleteLfg as delete
+  deleteLfg as delete,
+  join,
 }
