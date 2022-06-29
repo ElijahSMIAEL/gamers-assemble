@@ -93,6 +93,17 @@ function update(req, res) {
   })
 }
 
+function deleteLfg(req, res) {
+  Lfg.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect('/lfgs')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/lfgs')
+  })
+}
+
 
 export {
   index,
@@ -101,4 +112,5 @@ export {
   show,
   edit,
   update,
+  deleteLfg as delete
 }

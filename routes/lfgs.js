@@ -22,6 +22,9 @@ router.post('/', isLoggedIn, lfgsCtrl.create)
 // PUT -- localhost:3000/lfgs/:id
 router.put('/:id', isLoggedIn, lfgsCtrl.update)
 
+// DELETE localhost:3000/lfgs/:id
+router.delete('/:id', isLoggedIn, lfgsCtrl.delete)
+
 export {
   router
 }
