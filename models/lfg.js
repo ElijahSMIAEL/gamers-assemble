@@ -9,7 +9,7 @@ const lfgSchema = new Schema({
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   game: {type: Schema.Types.ObjectId, ref: "Game"},
   playerNo: {type: Number, required: true},
-  playerReplies: [{type: String}]
+  playerReplies: [String]
 }, {
   timestamps: true
 }) 

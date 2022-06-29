@@ -1,5 +1,6 @@
 import { Lfg } from "../models/lfg.js"
 import { Game } from "../models/game.js"
+import { Profile } from "../models/profile.js"
 
 function index(req, res) {
   Lfg.find({})
@@ -106,12 +107,17 @@ function deleteLfg(req, res) {
 
 function join(req, res) {
   Lfg.findById(req.params.id)
+  .populate('owner')
   .then(lfg => {
-    lfg.playerNo = lfg.playerNo - 1
-    lfg.playerReplies.push(req.user.profile.gamerTag)
-    lfg.save()
-    .then(() => {
-      res.redirect(`/lfgs/${lfg._id}`)
+    Profile.findById(req.user.profile._id)
+      .then(profile => {
+        console.log(profile)
+        lfg.playerNo = lfg.playerNo - 1
+        lfg.playerReplies.push(profile.gamerTag)
+        lfg.save()
+        .then(() => {
+          res.redirect(`/lfgs/${lfg._id}`)
+      })
     })
   })
   .catch(err => {

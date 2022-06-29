@@ -12,13 +12,16 @@
   <% if (lfg.owner.equals(user?.profile._id)) { %> 
   <ul>
     <% lfg.playerReplies.forEach(reply => { %>
-      <li><%= reply.owner %></li>
+      <li><%= reply %></li>
     <% }) %>
   </ul>
   <% } %> 
   <% if (lfg.owner.equals(user?.profile._id)) { %> 
   <form action="/lfgs/<%= lfg._id %>/edit" method="GET">
     <button id="edit-button">Edit</button>
+  </form>
+  <form action="/lfgs/<%= lfg._id %>?_method=DELETE" method="POST">
+    <button id="delete-button">Delete</button>
   </form>
   <% } else if (lfg.playerNo !== 0){ %>
     <form action="/lfgs/<%= lfg._id %>/replies" method="POST">

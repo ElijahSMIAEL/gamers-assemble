@@ -11,15 +11,15 @@
       />
     </div>
   <% } %>
-  <% if (!user?.profile.gamerTag) { %> 
-  <form action="/profiles/<%= user.profile._id %>?_method=PATCH" method="POST">
+  <% if (!profile.gamerTag) { %> 
+  <form action="/profiles/<%= profile._id %>?_method=PATCH" method="POST">
     <label for="steam-input">Steam-Username: </label>
     <input type="text" name="gamerTag" id="steam-input">
     <button type="submit">Enter</button>
   </form>
   <% } else { %> 
     <label for="steam-display">Steam-Username: </label>
-    <div id="steam-display">You are this person: <%= user.profile.gamerTag %></div>
+    <div id="steam-display">You are this person: <%= profile.gamerTag %></div>
   <% } %> 
 </main>
 
