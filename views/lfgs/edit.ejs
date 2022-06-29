@@ -11,6 +11,9 @@
     <textarea name="content" id="lfg-content" placeholder="<%= lfg.content %>"></textarea>
     <button id="lfg-submit-btn" type="submit">Update LFG</button>
   </form>
+  <form action="/lfgs/<%= lfg._id %>?_method=DELETE" method="POST">
+    <button id="delete-button">Delete</button>
+  </form>
 </main>
 
 <%- include('../partials/footer') %>
