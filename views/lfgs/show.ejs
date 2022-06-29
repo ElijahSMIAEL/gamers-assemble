@@ -23,7 +23,7 @@
   <form action="/lfgs/<%= lfg._id %>?_method=DELETE" method="POST">
     <button id="delete-button">Delete</button>
   </form>
-  <% } else if (lfg.playerNo !== 0){ %>
+  <% } else if (lfg.playerNo !== 0 && user){ %>
     <form action="/lfgs/<%= lfg._id %>/replies" method="POST">
     <button id="join-button">Join</button>
     </form>

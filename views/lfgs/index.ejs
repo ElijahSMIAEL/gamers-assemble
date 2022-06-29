@@ -2,14 +2,16 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <div id="lfg-post" class="card" style="width: 18rem;">
+  <div id="lfg-post" class="card">
     <% lfgs.forEach(lfg => { %>
-    <img src="..." class="card-img-top" alt="...">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
     <a id="card-a" href="/lfgs/<%= lfg._id %>">
       <div class="card-body">
         <h5 id="card-title" class="card-text"><%= lfg.name %></h5>
-        <h6 id="card-subtitle" class="card-text"><%= lfg.game.name %></h6>
-        <h5>Posted by: <%= lfg.owner.name %></h5>
+        <div id="card-subtitle">
+          <h6 class="card-text">Game: <%= lfg.game.name %></h6>
+          <h6 class="card-text">Posted by: <%= lfg.owner.name %></h6>
+        </div>
       </div>
     </a>
     <% }) %>
