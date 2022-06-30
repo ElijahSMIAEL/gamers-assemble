@@ -7,4 +7,6 @@ Trello Board: https://trello.com/b/yOc9emeO/unit-2-project
 ERD:
 ![Alt text](GamersAssembleERD.png)
 
+Technologies Used: Node.js, Express.js, Mongoose, MongoDB, Bootstrap, GoogleOAuth,
+
 Next Steps: Once basic application functionality has been implemented and games are available by API, I will add an activities sub-document that can be added by users to games.
