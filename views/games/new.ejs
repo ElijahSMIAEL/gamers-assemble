@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
+  <h1 class="h1-title"><%= title %></h1>
   <form id="add-game-form" action="/games" method="POST">
     <input autocomplete="off" type="text" name="name" id="game-title-input" placeholder="Game Title...">
     <button type="submit" id="add-game-btn">Add Game</button>

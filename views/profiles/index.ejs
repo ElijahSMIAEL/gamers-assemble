@@ -2,25 +2,26 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= user ? user.profile.name : "Please sign in" %></h1>
+  <h1 class="h1-title"><%= user ? user.profile.name : "Please sign in" %></h1>
+  <div id="profile-div">
   <% if (user?.profile.avatar) { %>
-    <div>
       <img
+        id="profile-div-img"
         src="<%= user.profile.avatar %>"
         alt="<%= user.profile.name %> avatar"
       />
-    </div>
-  <% } %>
-  <% if (!profile.gamerTag) { %> 
-  <form action="/profiles/<%= profile._id %>?_method=PATCH" method="POST">
-    <label for="steam-input">Steam-Username: </label>
-    <input type="text" name="gamerTag" id="steam-input">
-    <button type="submit">Enter</button>
-  </form>
-  <% } else { %> 
-    <label for="steam-display">Steam-Username: </label>
-    <div id="steam-display"><%= profile.gamerTag %></div>
-  <% } %> 
+      <% } %>
+      <% if (!profile.gamerTag) { %> 
+        <form action="/profiles/<%= profile._id %>?_method=PATCH" method="POST">
+          <label for="steam-input">Steam-Username: </label>
+          <input type="text" name="gamerTag" id="steam-input">
+          <button type="submit">Enter</button>
+        </form>
+        <% } else { %> 
+          <label for="steam-display">Steam-Username: </label>
+          <div id="steam-display"><%= profile.gamerTag %></div>
+        <% } %> 
+  </div>
 </main>
 
 <%- include('../partials/footer') %>

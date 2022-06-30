@@ -53,6 +53,7 @@ function show(req, res) {
   Lfg.findById(req.params.id)
   .populate('game')
   .populate('playerReplies')
+  .populate('owner')
   .then(lfg => {
     Game.find({_id: {$nin: lfg.game}})
     .then(game => {

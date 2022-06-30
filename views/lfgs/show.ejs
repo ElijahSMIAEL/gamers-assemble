@@ -2,13 +2,22 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <label for="game-display">Game: </label>
-  <div id="game-display"><%= lfg.game.name %></div>
-  <label for="playerNo-display">Players needed: </label>
-  <div id="playerNo-display"><%= lfg.playerNo %></div>
-  <label for="lfg-description">Description: </label>
-  <div id="lfg-description"><%= lfg.content %></div>
+  <h1 class="h1-title"><%= title %></h1>
+  <div class="show-view">
+    <div>
+      <label for="owner-display">Posted by: </label>
+      <div id="owner-display"><%= lfg.owner.name %></div>
+    </div>
+    <div>
+      <label for="game-display">Game: </label>
+      <div id="game-display"><%= lfg.game.name %></div>
+    </div>
+    <div>
+      <label for="playerNo-display">Players needed: </label>
+      <div id="playerNo-display"><%= lfg.playerNo %></div>
+    </div>
+      <label for="lfg-description">Description: </label>
+      <div id="lfg-description"><%= lfg.content %></div>
   <% if (lfg.owner.equals(user?.profile._id)) { %> 
   <ul>
     <% lfg.playerReplies.forEach(reply => { %>
@@ -38,6 +47,7 @@
   <a href="/lfgs">
     <button>Back</button>
   </a>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
