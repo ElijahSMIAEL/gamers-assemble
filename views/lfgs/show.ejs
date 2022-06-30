@@ -29,13 +29,15 @@
     <form action="/lfgs/<%= lfg._id %>/replies" method="POST">
     <button id="join-button">Join</button>
     </form>
-  <% } else if (user) { %>
+  <% } else if (user && lfg.playerReplies.some(replies => {return replies._id.equals(user.profile._id)})) { %>
     <h3>You have already joined this group</h3>
+    <form action="/lfgs/<%= lfg._id %>/replies/<%= user.profile._id %>?_method=DELETE" method="POST">
+      <button>Leave</button>
+    </form>
   <% } %> 
   <a href="/lfgs">
     <button>Back</button>
   </a>
-
 </main>
 
 <%- include('../partials/footer') %>

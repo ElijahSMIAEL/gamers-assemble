@@ -133,6 +133,25 @@ function join(req, res) {
   })
 }
 
+function leaveGroup(req, res) {
+  console.log(req.params.id)
+  Lfg.findById(req.params.id)
+  .populate('playerReplies')
+  .then(lfg => {
+    console.log(lfg)
+      lfg.playerNo = lfg.playerNo + 1
+      lfg.playerReplies.remove(req.params.repliesId)
+      lfg.save()
+      .then(() => {
+        res.redirect(`/lfgs/${lfg._id}`)
+      })
+    })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/lfgs')
+  })
+}
+
 
 export {
   index,
@@ -143,4 +162,5 @@ export {
   update,
   deleteLfg as delete,
   join,
+  leaveGroup,
 }

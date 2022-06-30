@@ -28,6 +28,9 @@ router.put('/:id', isLoggedIn, lfgsCtrl.update)
 // DELETE localhost:3000/lfgs/:id
 router.delete('/:id', isLoggedIn, lfgsCtrl.delete)
 
+// DELETE localhost:3000/lfgs/:id/replies/:id
+router.delete('/:id/replies/:repliesId', isLoggedIn, lfgsCtrl.leaveGroup)
+
 export {
   router
 }

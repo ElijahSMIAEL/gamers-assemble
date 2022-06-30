@@ -2,8 +2,8 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <% lfgs.forEach(lfg => { %>
   <div id="lfg-post" class="card">
-    <% lfgs.forEach(lfg => { %>
     <!-- <img src="..." class="card-img-top" alt="..."> -->
     <a id="card-a" href="/lfgs/<%= lfg._id %>">
       <div class="card-body">
@@ -14,8 +14,8 @@
         </div>
       </div>
     </a>
-    <% }) %>
   </div>
+  <% }) %>
 </main>
 
 <%- include('../partials/footer') %>
