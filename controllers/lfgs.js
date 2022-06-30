@@ -52,6 +52,7 @@ function create(req, res) {
 function show(req, res) {
   Lfg.findById(req.params.id)
   .populate('game')
+  .populate('playerReplies')
   .then(lfg => {
     Game.find({_id: {$nin: lfg.game}})
     .then(game => {
@@ -119,7 +120,7 @@ function join(req, res) {
       .then(profile => {
         console.log(profile)
         lfg.playerNo = lfg.playerNo - 1
-        lfg.playerReplies.push(profile.gamerTag)
+        lfg.playerReplies.push(profile._id)
         lfg.save()
         .then(() => {
           res.redirect(`/lfgs/${lfg._id}`)

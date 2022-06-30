@@ -12,7 +12,7 @@
   <% if (lfg.owner.equals(user?.profile._id)) { %> 
   <ul>
     <% lfg.playerReplies.forEach(reply => { %>
-      <li><%= reply %></li>
+      <li><%= reply.gamerTag %></li>
     <% }) %>
   </ul>
   <% } %> 
@@ -23,11 +23,15 @@
   <form action="/lfgs/<%= lfg._id %>?_method=DELETE" method="POST">
     <button id="delete-button">Delete</button>
   </form>
-  <% } else if (lfg.playerNo !== 0 && user){ %>
+  <% } else if (lfg.playerNo !== 0 && user && !lfg.playerReplies.some(replies => {return replies._id.equals(user.profile._id)}))
+  {
+    %>
     <form action="/lfgs/<%= lfg._id %>/replies" method="POST">
     <button id="join-button">Join</button>
     </form>
-  <% } %>
+  <% } else if (user) { %>
+    <h3>You have already joined this group</h3>
+  <% } %> 
   <a href="/lfgs">
     <button>Back</button>
   </a>

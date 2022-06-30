@@ -1,6 +1,6 @@
-Application Name: Gamers Assemble.
+Application Name: Gamers Assembly.
 
-Description: A MEN-Stack software for gamers that utilizes videogame API and Google-OAuth. The primary functionality and focus of this application is to allow gaming users to find a group to play any game with on any platform.
+Description: A MEN-Stack software for gamers that will utilize videogame API and Google-OAuth. The primary functionality and focus of this application is to allow gaming users to find a group to play any game with on any platform.
 
 Trello Board: https://trello.com/b/yOc9emeO/unit-2-project
 
