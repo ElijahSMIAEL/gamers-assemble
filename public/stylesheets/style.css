@@ -22,32 +22,55 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
+  background: url(../images/image-assets/gass.png);
+  background-size: cover;
 }
 
 nav {
-  background-color: white;
-  font-size: 1.6rem;
+  margin: 10px;
+  font-size: 3.0rem;
   display: flex;
   justify-content: center;
 }
 
-nav > a {
-  margin: 10px;
+nav > div > a {
+  justify-content: center;
+  margin: 20px;
   text-decoration: none;
   padding: 5px;
   border-radius: 5px;
-  color: #424748;
+  color: white
 }
 
-nav > a:visited {
-  color: #424748;
+#nav-a {
+  margin-top: 30px;
+  margin-left: auto;
+  justify-content: right;
 }
 
-nav > a.active {
+
+nav > div > a:visited {
+  color: white;
+}
+
+nav > div > a:hover {
+  color: #495057;
+}
+
+nav > div > a.active {
   color: aqua;
-  font-size: 1.8rem;
+  font-size: 3.0rem;
 }
 
+#main-title {
+  font-size: 6.5rem;
+  font-family: 'Lusitana', serif;
+  position: absolute;
+  justify-self: center;
+  margin-top: 20px;
+  margin-right: 150px;
+  margin-left: 150px;
+}
 
 main {
   display: flex;
@@ -57,12 +80,19 @@ main {
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 4.5rem;
+}
+
+#card-container {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) ;
+  width: 100%;
 }
 
 .card {
-  margin-top: 10px;
-  margin: 20px;
+  background-color: rgba(210,210,210,0.8);
+  margin-top: 75px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,4 +121,49 @@ h1 {
 #card-a {
   text-decoration: none;
   color: black;
+}
+
+#nav-profile-img {
+  border-radius: 50%;
+  margin-right: 50px;
+  border: solid 6px black
+}
+
+#nav-profile-img:hover {
+  border-color: #495057;
+}
+
+#logout-btn {
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#logout-btn:hover {
+  background-color: #495057;
+  color: white;
+}
+
+#new-lfg-form {
+  margin-top: 100px;
+  background-color: #495057;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 30px;
+  border: solid grey;
+  border-radius: 15px;
+}
+
+#lfg-content {
+  margin: 20px 0px;
+}
+
+#playerNum {
+  text-align: center;
+}
+
+#lfg-title, #lfg-content, #playerNum, #lfg-submit-btn, #game-select {
+  border: solid grey;
 }

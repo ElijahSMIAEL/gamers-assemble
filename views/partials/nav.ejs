@@ -6,13 +6,13 @@
   <nav>
     <% if (user) { %>
       <a href="/profiles/<%= user.profile._id %>">
-        <img
+        <img id="nav-profile-img"
           src="<%= user.profile.avatar %>"
           alt="<%= user.profile.name %> avatar"
         />
       </a>
       <a href="/auth/logout">
-        <button type="submit">Logout</button>
+        <button id="logout-btn" type="submit">Logout</button>
       </a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
@@ -21,16 +21,19 @@
         </button>
       </a>
     <% } %>
-    <a href="/lfgs" <%- title === 'All LFGs' ? 'class="active"' : '' %>   
-      >
-      All LFGs
-    </a>
-    <a href="/lfgs/new" <%- title === 'Create LFG' ? 'class="active"' : '' %> 
-    >
-      Create LFG
-    </a>
-    <a href="/games/new" <%- title === 'Add Game'  ? 'class="active"' : '' %>  
-      >
-      Add Game
-    </a>
+    <h1 id="main-title">Gamers Assemble</h1>
+    <div id="nav-a">
+      <a href="/lfgs" <%- title === 'All LFGs' ? 'class="active"' : '' %>   
+        >
+        All LFGs
+      </a>
+      <a href="/lfgs/new" <%- title === 'Create LFG' ? 'class="active"' : '' %> 
+        >
+        Create LFG
+      </a>
+      <a href="/games/new" <%- title === 'Add Game'  ? 'class="active"' : '' %>  
+        >
+        Add Game
+      </a>
+    </div>
   </nav>
