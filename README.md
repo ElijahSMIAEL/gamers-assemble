@@ -1,4 +1,6 @@
-# Gamers Assemble.
+# Gamers Assemble
+
+![Alt text](public/images/image-assets/gassWorkPrev.png)
 
 ##  Description 
 A MEN-Stack software for gamers that utilizes MEN-Stack and Google-OAuth. The primary functionality and focus of this application is to allow gaming users to find a group to play any game with.
@@ -21,6 +23,7 @@ Node.js, Express.js, Mongoose, MongoDB, Bootstrap, GoogleOAuth, Javascript, HTML
 
 ## Credits  
 Background: Ian Terada, Hunter Long
+Favicon: https://realfavicongenerator.net/
 
 ## Deployed URL
  https://gamers-assembly.herokuapp.com/
