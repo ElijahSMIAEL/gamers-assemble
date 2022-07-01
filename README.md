@@ -22,7 +22,7 @@ https://whimsical.com/unit-2-project-erd-V9MWLsKJE7gwrPCehjx59r
 Node.js, Express.js, Mongoose, MongoDB, Bootstrap, GoogleOAuth, Javascript, HTML, CSS.
 
 ## Credits  
-Background: Ian Terada, Hunter Long
+Background: Ian Terada, Hunter Long |
 Favicon: https://realfavicongenerator.net/
 
 ## Deployed URL
