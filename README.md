@@ -26,7 +26,7 @@ Background: Ian Terada, Hunter Long |
 Favicon: https://realfavicongenerator.net/
 
 ## Deployed URL
- https://gamers-assembly.herokuapp.com/
+[Gamers Assemble](https://gamers-assembly.herokuapp.com/)
 
 ## Next Steps 
 Once basic application functionality has been implemented, I will refactor the Game model to use API. I will add an activities sub-document that can be added by users to games.
