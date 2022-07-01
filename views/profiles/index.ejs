@@ -16,7 +16,7 @@
         <form action="/profiles/<%= profile._id %>?_method=PATCH" method="POST">
           <label for="steam-input">Steam-Username: </label>
           <input type="text" name="gamerTag" id="steam-input">
-          <button type="submit">Enter</button>
+          <button id="profile-enter-btn" type="submit">Enter</button>
         </form>
         <% } else { %> 
           <label for="steam-display">Steam-Username: </label>

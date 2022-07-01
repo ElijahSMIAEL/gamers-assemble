@@ -262,6 +262,12 @@ h3 {
   border: solid grey;
 }
 
+#profile-enter-btn, #add-game-btn, #lfg-submit-btn {
+  border-radius: 10px;
+  background-color: lightgrey;
+  border: solid black;
+}
+
 @media only screen and (max-width: 1024px) {
   #title-anchor {
     margin-top: 100px;
