@@ -8,7 +8,7 @@ const router = Router()
 router.get('/', lfgsCtrl.index)
 
 // GET -- localhost:3000/lfgs/new
-router.get('/new', lfgsCtrl.new)
+router.get('/new', isLoggedIn, lfgsCtrl.new)
 
 // GET -- localhost:3000/lfgs/:id
 router.get('/:id', lfgsCtrl.show)
