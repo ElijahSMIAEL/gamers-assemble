@@ -1,12 +1,29 @@
-Application Name: Gamers Assembly.
+# Gamers Assemble.
 
-Description: A MEN-Stack software for gamers that will utilize videogame API and Google-OAuth. The primary functionality and focus of this application is to allow gaming users to find a group to play any game with on any platform.
+##  Description 
+A MEN-Stack software for gamers that utilizes MEN-Stack and Google-OAuth. The primary functionality and focus of this application is to allow gaming users to find a group to play any game with.
 
-Trello Board: https://trello.com/b/yOc9emeO/unit-2-project
+## Planning Materials
+ Trello Board: 
+![Alt text](public/images/image-assets/TrelloGABoard.png)
+ https://trello.com/b/yOc9emeO/unit-2-project
 
-ERD:
+WireFrame:
+![Alt text](public/images/image-assets/GAWireframe.png)
+ https://whimsical.com/unit-2-main-wireframe-AtGUsmWx8LLxmH7ZZvGhZ4
+
+ERD: 
 ![Alt text](GamersAssembleERD.png)
+https://whimsical.com/unit-2-project-erd-V9MWLsKJE7gwrPCehjx59r
 
-Technologies Used: Node.js, Express.js, Mongoose, MongoDB, Bootstrap, GoogleOAuth,
+## Technologies Used 
+Node.js, Express.js, Mongoose, MongoDB, Bootstrap, GoogleOAuth, Javascript, HTML, CSS.
 
-Next Steps: Once basic application functionality has been implemented and games are available by API, I will add an activities sub-document that can be added by users to games.
+## Credits  
+Background: Ian Terada, Hunter Long
+
+## Deployed URL
+ https://gamers-assembly.herokuapp.com/
+
+## Next Steps 
+Once basic application functionality has been implemented, I will refactor the Game model to use API. I will add an activities sub-document that can be added by users to games.
