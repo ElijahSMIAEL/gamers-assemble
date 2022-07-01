@@ -19,7 +19,7 @@ ERD:
 https://whimsical.com/unit-2-project-erd-V9MWLsKJE7gwrPCehjx59r
 
 ## Technologies Used 
-Node.js, Express.js, Mongoose, MongoDB, Bootstrap, GoogleOAuth, Javascript, HTML, CSS.
+| Node.js | Express.js | Mongoose | MongoDB | Bootstrap | GoogleOAuth | Javascript | HTML | CSS |
 
 ## Credits  
 Background: Ian Terada, Hunter Long |
