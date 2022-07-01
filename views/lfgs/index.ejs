@@ -12,6 +12,12 @@
           <div id="card-subtitle">
             <h6 class="card-text">Posted by: <%= lfg.owner.name %></h6>
             <h6 class="card-text">Game: <%= lfg.game.name %></h6>
+            <% if (lfg.playerNo !== 0) {%> 
+            <h6 class="card-text">Players Needed: <%= lfg.playerNo %></h6>
+            <% } %> 
+            <% if (lfg.playerNo === 0) {%> 
+              <h6 class="card-text">Group is full!</h6>
+              <% } %> 
           </div>
         </div>
       </a>
